@@ -1,17 +1,17 @@
-const deleteText = document.querySelectorAll('.fa-trash')
-const thumbText = document.querySelectorAll('.fa-thumbs-up')
+const deleteText = document.querySelectorAll('.fa-minus')
+const addHeart = document.querySelectorAll('.fa-heart-o')
 
 Array.from(deleteText).forEach((element)=>{
     element.addEventListener('click', deleteAffirmation)
 })
 
-Array.from(thumbText).forEach((element)=>{
+Array.from(addHeart).forEach((element)=>{
     element.addEventListener('click', addLike)
 })
 
 async function deleteAffirmation(){
     const entryText = this.parentNode.childNodes[1].innerText
-    const sourceText = this.parentNode.childNodes[3].innerText
+    const sourceText = this.parentNode.childNodes[5].innerText
     try{
         const response = await fetch('deleteAffirmation', {
             method: 'delete',
@@ -32,8 +32,8 @@ async function deleteAffirmation(){
 
 async function addLike(){
     const entryText = this.parentNode.childNodes[1].innerText
-    const sourceText = this.parentNode.childNodes[3].innerText
-    const tLikes = Number(this.parentNode.childNodes[5].innerText)
+    const sourceText = this.parentNode.childNodes[5].innerText
+    const tLikes = Number(this.parentNode.childNodes[7].innerText)
     try{
         const response = await fetch('addOneLike', {
             method: 'put',

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affirmations</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Restorative Spells</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa339ab44f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,24 +19,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>List of Affirmations</h1>
+    <h1>Restorative Spells</h1>
     <ul class="affirmations">
     <% for(let i=0; i < info.length; i++) {%>
         <li class="affirmation">
             <span><%= info[i].entry %></span>
+            <span>-</span>
             <span><%= info[i].source %></span>
             <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
-            <span class='fa fa-trash'></span>
+            <span class='fa fa-heart-o'></span>
+            <span class='fa fa-minus'></span>
         </li>
     <% } %>
     </ul>
 
-    <h2>Add an affirmation:</h2>
+    <h2>Add a spell:</h2>
 
     <form action="/addAffirmation" method="POST">
-        <input type="text" placeholder="Add entry..." name="entry">
-        <input type="text" placeholder="Add source..." name="source">
+        <input type="text" placeholder="Entry..." name="entry">
+        <input type="text" placeholder="Source..." name="source">
         <input type="submit">
     </form>
     
