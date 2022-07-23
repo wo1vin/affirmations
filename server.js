@@ -7,7 +7,7 @@ require('dotenv').config()
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'rap'
+    dbName = 'affirmations'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
@@ -22,25 +22,25 @@ app.use(express.json())
 
 
 app.get('/',(request, response)=>{
-    db.collection('rappers').find().sort({likes: -1}).toArray()
+    db.collection('affirmations').find().sort({likes: -1}).toArray()
     .then(data => {
         response.render('index.ejs', { info: data })
     })
     .catch(error => console.error(error))
 })
 
-app.post('/addRapper', (request, response) => {
-    db.collection('rappers').insertOne({stageName: request.body.stageName,
-    birthName: request.body.birthName, likes: 0})
+app.post('/addAffirmation', (request, response) => {
+    db.collection('affirmations').insertOne({entry: request.body.entry,
+    source: request.body.source, likes: 0})
     .then(result => {
-        console.log('Rapper Added')
+        console.log('Affirmation Added')
         response.redirect('/')
     })
     .catch(error => console.error(error))
 })
 
 app.put('/addOneLike', (request, response) => {
-    db.collection('rappers').updateOne({stageName: request.body.stageNameS, birthName: request.body.birthNameS,likes: request.body.likesS},{
+    db.collection('affirmations').updateOne({entry: request.body.entryS, source: request.body.sourceS,likes: request.body.likesS},{
         $set: {
             likes:request.body.likesS + 1
           }
@@ -56,11 +56,11 @@ app.put('/addOneLike', (request, response) => {
 
 })
 
-app.delete('/deleteRapper', (request, response) => {
-    db.collection('rappers').deleteOne({stageName: request.body.stageNameS})
+app.delete('/deleteAffirmation', (request, response) => {
+    db.collection('affirmations').deleteOne({entry: request.body.entryS})
     .then(result => {
-        console.log('Rapper Deleted')
-        response.json('Rapper Deleted')
+        console.log('Affirmation Deleted')
+        response.json('Affirmation Deleted')
     })
     .catch(error => console.error(error))
 
