@@ -1,12 +1,91 @@
 body {
-    padding: 2em 3em;
-    background-color: rgb(255, 210, 31);
+    margin: 0;
+    background: rgb(255,197,221);
+    background: linear-gradient(72deg, rgba(255,197,221,1) 22%, rgba(255,114,172,1) 53%, rgba(251,116,172,1) 80%, rgba(255,194,219,1) 96%);
     font-family: 'Ibarra Real Nova', serif;
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-
-h1{
-    color: red;
+header{
+    padding: 2.5em 3em;
+    text-align: center;
 }
+.list{
+    padding: 0 3em;
+}
+.addEntry{
+    padding: 3em;
+    text-align: center;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li{
+    text-align:center;
+    margin-bottom: 1em;
+    background-color: rgba(237, 227, 255, 0.7);
+    color: rgb(97, 35, 29);
+    padding: .8em 1.2em;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px rgba(97, 35, 29, 0.52);
+}
+.fa-minus{
+    display: block;
+    float: right;
+}
+.entry{
+    padding: 0 1em;
+    display: block;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.source,.hearts{
+    display: inline;
+    padding: 0 .5em;
+}
+h1,h2{
+    margin: 0;
+    color: rgb(97, 35, 29);
+    font-weight: 600;
+}
+h1, h2{
+    text-decoration: underline dotted;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em;
+
+}
+textarea, .userSource{
+    padding: .75em;
+    border-radius: 10px;
+    margin-bottom: .51em;
+    width: 80%;
+}
+.userSource{
+    border: 1px solid rgb(133, 133, 133);
+}
+.btn{
+    margin-top: .65em;
+    padding: .8em 1em;
+    border-radius: 15px;
+    background-color: rgb(89, 28, 22);
+    color: rgba(255, 227, 251, 0.85);
+    border: none;
+    box-shadow: 0px 0px 8px 3px rgba(94, 26, 20, 0.72);
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: .95em;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+/* 
+color palette:
+https://coolors.co/d94008-fa76ad-fda635-ffd21f 
+*/
