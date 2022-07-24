@@ -1,7 +1,12 @@
 body {
+    padding: 2em 3em;
     background-color: rgb(255, 210, 31);
     font-family: 'Ibarra Real Nova', serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
+
 h1{
     color: red;
 }
