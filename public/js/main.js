@@ -10,8 +10,8 @@ Array.from(addHeart).forEach((element)=>{
 })
 
 async function deleteAffirmation(){
-    const entryText = this.parentNode.childNodes[1].innerText
-    const sourceText = this.parentNode.childNodes[5].innerText
+    const entryText = this.parentNode.childNodes[3].innerText
+    const sourceText = this.parentNode.childNodes[7].innerText
     try{
         const response = await fetch('deleteAffirmation', {
             method: 'delete',
@@ -31,9 +31,9 @@ async function deleteAffirmation(){
 }
 
 async function addLike(){
-    const entryText = this.parentNode.childNodes[1].innerText
-    const sourceText = this.parentNode.childNodes[5].innerText
-    const tLikes = Number(this.parentNode.childNodes[7].innerText)
+    const entryText = this.parentNode.parentNode.childNodes[3].innerText
+    const sourceText = this.parentNode.parentNode.childNodes[5].childNodes[1].innerText
+    const tLikes = Number(this.parentNode.childNodes[1].innerText)
     try{
         const response = await fetch('addOneLike', {
             method: 'put',
