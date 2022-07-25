@@ -44,9 +44,6 @@ app.put('/addOneLike', (request, response) => {
         $set: {
             likes:request.body.likesS + 1
           }
-    },{
-        sort: {_id: -1},
-        upsert: true
     })
     .then(result => {
         console.log('Added One Like')
